@@ -1,0 +1,27 @@
+﻿<Window x:Class="Personnel.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Personnel"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Авторизация" Height="450" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Label Margin="0,0,0,50" Content="Авторизация" FontFamily="Arial Black" FontSize="24" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
+            <TextBox Margin="5,5,5,0" Width="300" Name="Login" materialDesign:HintAssist.Hint="Логин" FontSize="16"/>
+        </Border>
+        <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
+            <Grid>
+                <PasswordBox Margin="5,5,5,0" Width="300" Name="PasswordBox" materialDesign:HintAssist.Hint="Пароль" FontSize="16"/>
+                <TextBox Margin="5,5,5,0" Width="300" Name="passwordTxtBox" materialDesign:HintAssist.Hint="Пароль" FontSize="16" Visibility="Collapsed"/>
+            </Grid>
+        </Border>
+        <CheckBox HorizontalAlignment="Right" Margin="0,0,10,0" Content="Показать пароль" FlowDirection="RightToLeft" Foreground="#FF444654" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <Button Content="Войти" Margin="10,10,10,10" Height="40" Click="Button_Click"/>
+        <TextBlock  HorizontalAlignment="Center">
+                <Hyperlink NavigateUri="Mail_Recovery.xaml" Cursor="Hand" Click="Hyperlink_Click">Забыли пароль?</Hyperlink>
+        </TextBlock>
+    </StackPanel>
+</Window>
