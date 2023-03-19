@@ -6,13 +6,44 @@
         xmlns:local="clr-namespace:Personnel"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl TabStripPlacement="Left">
             <TabItem Header="Пользователи">
-                <StackPanel/> 
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <DataGrid Name="UsersDg" IsReadOnly="True" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}"/>
+                                <DataGridTextColumn Header="Логин" Binding="{Binding Login}"/>
+                                <DataGridTextColumn Header="Должность" Binding="{Binding Post}"/>
+                                <DataGridTextColumn Header="Номер телефона" Binding="{Binding Phone}"/>
+                                <DataGridTextColumn Header="Почта" Binding="{Binding Mail}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                            <CheckBox Name="AllCB" IsChecked="True" Content="Все" Click="AllCB_Click"/>
+                            <CheckBox Name="ProbationCb" Margin="5,0,0,0" Content="Испытательный срок" Checked="ProbationCb_Checked"/>
+                            <CheckBox Name="WorksCb" Margin="5,0,0,0" Content="Работает" Checked="WorksCb_Checked"/>
+                            <CheckBox Name="DismissedCb" Margin="5,0,0,0" Content="Уволен" Checked="DismissedCb_Checked"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Margin="10,5,5,10">
+                        <Button Content="Создать пользователя" Click="Button_Click"/>
+                        <Button Margin="0,5,0,0"  Content="Изменить пользователя"/>
+                        <Button Margin="0,5,0,0"  Content="Удалить пользователя" Click="Button_Click_1"/>
+                        <Button Margin="0,15,0,0"  Content="Отчет по посещаемости"/>
+                        <Button Margin="0,5,0,0"  Content="Отчет по сотруднику"/>
+                        <Button Margin="0,5,0,0"  Content="Отчет по отпускам сотрудника"/>
+                        <Button Margin="0,15,0,0"  Content="Характеристика на сотрудника"/>
+                        <Button Margin="0,5,0,0"  Content="Уволить сотрудника"/>
+                        <Button Margin="0,5,0,0"  Content="Принять на работу"/>
+                    </StackPanel>
+                </StackPanel>
             </TabItem>
-            <TabItem Header="2">
+            <TabItem Header="Посещаемость">
+            </TabItem>
+            <TabItem Header="Отпуска">
             </TabItem>
         </TabControl>
     </Grid>

@@ -35,7 +35,7 @@
                     <TextBox Margin="5,5,5,0" Width="300" Name="passwordTxtBox2" materialDesign:HintAssist.Hint="Повторите пароль" FontSize="16" Visibility="Collapsed" MaxLength="30"/>
                 </Grid>
             </Border>
-            <CheckBox HorizontalAlignment="Right" Margin="0,0,10,0" Content="Показать пароли" FlowDirection="RightToLeft" Foreground="#FF444654" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <CheckBox HorizontalAlignment="Right" Margin="0,0,10,0" Content="Показать пароль" FlowDirection="RightToLeft" Foreground="#FF444654" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
             <Button  Content="Сменить пароль" Margin="10,5,10,10" Height="40" Click="Button_Click_2"/>
         </StackPanel>
         <TextBlock  HorizontalAlignment="Center">
