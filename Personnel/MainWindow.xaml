@@ -8,6 +8,12 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="Пользователи">
+                <StackPanel/> 
+            </TabItem>
+            <TabItem Header="2">
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

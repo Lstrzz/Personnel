@@ -10,7 +10,7 @@
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <Label Margin="0,0,0,50" Content="Авторизация" FontFamily="Arial Black" FontSize="24" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
-            <TextBox Margin="5,5,5,0" Width="300" Name="Login" materialDesign:HintAssist.Hint="Логин" FontSize="16"/>
+            <TextBox Margin="5,5,5,0" Width="300" Name="LoginTb" materialDesign:HintAssist.Hint="Логин" FontSize="16"/>
         </Border>
         <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
             <Grid>

@@ -48,7 +48,10 @@ namespace Personnel
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            string log = Methods.EncodeDecrypt(LoginTb.Text);
+            MessageBox.Show(log);
+            log = Methods.EncodeDecrypt(log);
+            MessageBox.Show(log);
         }
     }
 }
