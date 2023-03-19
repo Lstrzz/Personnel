@@ -19,10 +19,12 @@ namespace Personnel
     /// </summary>
     public partial class LoginWindow : Window
     {
+        AppContext db;
         bool Ch = false;
         public LoginWindow()
         {
             InitializeComponent();
+            db = new AppContext();
         }
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -48,10 +50,22 @@ namespace Personnel
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string log = Methods.EncodeDecrypt(LoginTb.Text);
-            MessageBox.Show(log);
-            log = Methods.EncodeDecrypt(log);
-            MessageBox.Show(log);
+            if (LoginTb.Text != "" && (PasswordBox.Password != "" || passwordTxtBox.Text != ""))
+            {
+                string pass;
+                if (Ch == true) pass = passwordTxtBox.Text;
+                else pass = PasswordBox.Password;
+                string HashPass = Methods.StringToHash(pass);
+                User user = db.Users.FirstOrDefault(b=>b.Login== LoginTb.Text&&b.Password == HashPass);
+                if(user != null && user.FK_role==1)
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                }
+                else MessageBox.Show("Не верный логин или пароль.");
+            }
+            else MessageBox.Show("Не все поля заполнены.");
         }
     }
 }

@@ -12,15 +12,31 @@
         <Label Margin="0,0,0,30" Content="пароля" FontFamily="Arial Black" FontSize="24" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <StackPanel Name="MailSP">
             <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
-                <TextBox Margin="5,5,5,0" Width="300" Name="Mail" materialDesign:HintAssist.Hint="Почта" FontSize="16"/>
+                <TextBox Margin="5,5,5,0" Width="300" Name="LoginTb" materialDesign:HintAssist.Hint="Логин" FontSize="16"/>
             </Border>
             <Button  Content="Отправить код" Margin="10,5,10,10" Height="40" Click="Button_Click"/>
         </StackPanel>
-        <StackPanel Name="CodeSP" Visibility="Collapsed">
+        <StackPanel Name="CodeSP" Visibility="Collapsed" PreviewTextInput="CodeSP_PreviewTextInput">
             <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
-                <TextBox Margin="5,5,5,0" Width="300" Name="Code" materialDesign:HintAssist.Hint="Код" FontSize="16"/>
+                <TextBox Margin="5,5,5,0" Width="300" Name="CodeTb" materialDesign:HintAssist.Hint="Код" FontSize="16" MaxLength="5"/>
             </Border>
-            <Button  Content="Подтвердить" Margin="10,5,10,10" Height="40"/>
+            <Button  Content="Подтвердить" Margin="10,5,10,10" Height="40" Click="Button_Click_1"/>
+        </StackPanel>
+        <StackPanel Name="PassSP" Visibility="Collapsed">
+            <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
+                <Grid>
+                    <PasswordBox Margin="5,5,5,0" Width="300" Name="PasswordBox" materialDesign:HintAssist.Hint="Пароль" FontSize="16" MaxLength="30"/>
+                    <TextBox Margin="5,5,5,0" Width="300" Name="passwordTxtBox" materialDesign:HintAssist.Hint="Пароль" FontSize="16" Visibility="Collapsed" MaxLength="30"/>
+                </Grid>
+            </Border>
+            <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
+                <Grid>
+                    <PasswordBox Margin="5,5,5,0" Width="300" Name="PasswordBox2" materialDesign:HintAssist.Hint="Повторите пароль" FontSize="16" MaxLength="30"/>
+                    <TextBox Margin="5,5,5,0" Width="300" Name="passwordTxtBox2" materialDesign:HintAssist.Hint="Повторите пароль" FontSize="16" Visibility="Collapsed" MaxLength="30"/>
+                </Grid>
+            </Border>
+            <CheckBox HorizontalAlignment="Right" Margin="0,0,10,0" Content="Показать пароли" FlowDirection="RightToLeft" Foreground="#FF444654" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <Button  Content="Сменить пароль" Margin="10,5,10,10" Height="40" Click="Button_Click_2"/>
         </StackPanel>
         <TextBlock  HorizontalAlignment="Center">
                 <Hyperlink NavigateUri="Mail_Recovery.xaml" Cursor="Hand" Click="Hyperlink_Click">Вернуться</Hyperlink>
