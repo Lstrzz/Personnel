@@ -58,6 +58,7 @@ namespace Personnel
                 DismissedCb.IsChecked = false;
                 MessageBox.Show("Пользователь удален");
             }
+            MessageBox.Show("Пользователь не выбран");
         }
 
         private void AllCB_Click(object sender, RoutedEventArgs e)
@@ -98,6 +99,24 @@ namespace Personnel
             DismissedCb.IsChecked = true;
             List<User> users = db.Users.Where(b => b.FK_Status == 3).ToList();
             UsersDg.ItemsSource = users;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (UsersDg.SelectedItem is User Selected)
+            {
+                User user = db.Users.FirstOrDefault(b => b.Login == Selected.Login);
+                EdtUser edtUser = new EdtUser(user.Id);
+                if (edtUser.ShowDialog() == true)
+                {
+                    List<User> users = db.Users.ToList();
+                    UsersDg.ItemsSource = users;
+                    AllCB.IsChecked = true;
+                    ProbationCb.IsChecked = false;
+                    WorksCb.IsChecked = false;
+                    DismissedCb.IsChecked = false;
+                }
+            }
         }
     }
 }

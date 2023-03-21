@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:Personnel"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="RegUser" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
-    <StackPanel Margin="10">
-        <Label Margin="0,0,0,30" Content="Создать пользователя" FontFamily="Arial Black" FontSize="20" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        Title="RegUser" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Border BorderBrush="Black" Background="WhiteSmoke" BorderThickness="1" CornerRadius="10">
+        <StackPanel>
+        <Label Margin="0,0,0,30" Content="Создать пользователя" FontFamily="Arial Black" FontSize="20" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseDown="Label_MouseDown"/>
+        <StackPanel Margin="10">
         <Border CornerRadius="5" Background="#FFDFDFDF" Height="40" Margin="10">
             <TextBox Margin="5,5,5,0" Width="300" Name="FIOTb" materialDesign:HintAssist.Hint="ФИО" FontSize="16" MaxLength="30"/>
         </Border>
@@ -34,9 +36,11 @@
             </Grid>
         </Border>
         <CheckBox HorizontalAlignment="Right" Margin="0,0,10,0" Content="Показать пароль" FlowDirection="RightToLeft" Foreground="#FF444654" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
-        <StackPanel Margin="0,5,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button IsDefault="True" Content="Создать" Click="Button_Click"/>
             <Button IsCancel="True" Margin="5,0,10,0" Content="Отмена"/>
         </StackPanel>
     </StackPanel>
+    </StackPanel>
+    </Border>
 </Window>

@@ -30,7 +30,7 @@
                     </StackPanel>
                     <StackPanel Margin="10,5,5,10">
                         <Button Content="Создать пользователя" Click="Button_Click"/>
-                        <Button Margin="0,5,0,0"  Content="Изменить пользователя"/>
+                        <Button Margin="0,5,0,0"  Content="Изменить пользователя" Click="Button_Click_2"/>
                         <Button Margin="0,5,0,0"  Content="Удалить пользователя" Click="Button_Click_1"/>
                         <Button Margin="0,15,0,0"  Content="Отчет по посещаемости"/>
                         <Button Margin="0,5,0,0"  Content="Отчет по сотруднику"/>
@@ -43,7 +43,7 @@
             </TabItem>
             <TabItem Header="Посещаемость">
             </TabItem>
-            <TabItem Header="Отпуска">
+            <TabItem Header="Отпуски">
             </TabItem>
         </TabControl>
     </Grid>

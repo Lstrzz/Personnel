@@ -19,7 +19,7 @@ namespace Personnel
         public string Post { get; set; }
         public string Phone { get; set; }
         public string Mail { get; set; }
-        string Salary { get; set; }
+        public string Salary { get; set; }
         public string Inn { get; set; }
         public int FK_Status { get; set; }
         public User() { }

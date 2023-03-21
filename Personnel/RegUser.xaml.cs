@@ -89,5 +89,10 @@ namespace Personnel
             }
             else MessageBox.Show("Не все поля заполнены");
         }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left) this.DragMove();
+        }
     }
 }

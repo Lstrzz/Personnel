@@ -74,12 +74,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EdtUser.xaml.cs">
+      <DependentUpon>EdtUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegUser.xaml.cs">
       <DependentUpon>RegUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Role.cs" />
     <Compile Include="Statuse.cs" />
     <Compile Include="User.cs" />
+    <Page Include="EdtUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
